@@ -11,18 +11,28 @@
         $scope.lunchItems = '';
         $scope.len = 0;
         $scope.checkInput = function() {
-            //if the user doesn't enter anything, return prompt to enter data
+
             if ($scope.lunchItems.length === 0) 
             {
-                $scope.resultMsg = 'Please enter data';
+                $scope.resultMsg = 'Please enter data first';
             } 
             else 
             {
                 const itemsArray = $scope. lunchItems.split(',');
                 $scope.len = itemsArray.length;
+
+                if ($scope.len <= 3)
+                {
+                    $scope.resultMsg = 'Enjoy!';
+
+
+                }
+                else
+                {
+                    $scope.resultMsg = 'Too much!';
+                }
             }
-            
-            
+             
         };   
     }
 
